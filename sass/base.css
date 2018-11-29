@@ -27,28 +27,12 @@ body {
 input {
   border-style: none;
   border-radius: 10px;
-  width: 55rem;
+  width: 90vw;
+  max-width: 55rem;
   padding: 2rem;
+  font-weight: 400;
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
-}
-
-@media only screen and (max-width: 37.5em) {
-  input {
-    width: 45rem;
-  }
-}
-
-@media only screen and (max-width: 30em) {
-  input {
-    width: 40rem;
-  }
-}
-
-@media only screen and (max-width: 25em) {
-  input {
-    width: 30rem;
-  }
 }
 
 .container {
@@ -71,7 +55,8 @@ input {
   font-size: 4rem;
   letter-spacing: 3px;
   text-align: center;
-  padding: 5rem;
+  font-weight: 800;
+  padding: 5rem 0;
 }
 
 @media only screen and (max-width: 25em) {
@@ -82,6 +67,16 @@ input {
 
 .container__todoInput {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #warning {
@@ -93,24 +88,11 @@ input {
   background-color: #2ed8bb;
   padding: 1rem;
   border-radius: 5px;
-  top: 1rem;
+  top: 6rem;
   display: none;
   opacity: 1;
   position: absolute;
-  left: 6.9rem;
-  top: 6rem;
-}
-
-@media only screen and (max-width: 37.5em) {
-  #warning {
-    left: 1.9rem;
-  }
-}
-
-@media only screen and (max-width: 30em) {
-  #warning {
-    left: 0;
-  }
+  z-index: 1000;
 }
 
 #warning::after {
@@ -122,19 +104,14 @@ input {
   border-right: 2.5rem solid transparent;
   border-bottom: 4rem solid #2ed8bb;
   top: -4rem;
-  left: 17.6rem;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
 }
 
-@media only screen and (max-width: 30em) {
-  #warning::after {
-    left: 17.6rem;
-  }
-}
-
-@media only screen and (max-width: 25em) {
-  #warning::after {
-    left: 12.6rem;
-  }
+#todoList {
+  max-width: 55rem;
+  width: 90vw;
 }
 
 .todoItem {
@@ -145,7 +122,6 @@ input {
   background-color: #1d2227;
   margin-top: 1rem;
   padding: 1rem 2rem;
-  width: 55rem;
   border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -158,45 +134,11 @@ input {
           align-items: center;
 }
 
-@media only screen and (max-width: 37.5em) {
-  .todoItem {
-    width: 45rem;
-  }
-}
-
-@media only screen and (max-width: 30em) {
-  .todoItem {
-    width: 40rem;
-  }
-}
-
-@media only screen and (max-width: 25em) {
-  .todoItem {
-    width: 30rem;
-  }
-}
-
 .todoItem p {
   word-wrap: break-word;
-  width: 40rem;
-}
-
-@media only screen and (max-width: 37.5em) {
-  .todoItem p {
-    width: 30rem;
-  }
-}
-
-@media only screen and (max-width: 30em) {
-  .todoItem p {
-    width: 25rem;
-  }
-}
-
-@media only screen and (max-width: 25em) {
-  .todoItem p {
-    width: 15rem;
-  }
+  font-weight: 400;
+  width: 100%;
+  max-width: 45vw;
 }
 
 .todoItem_check {

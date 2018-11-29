@@ -31,17 +31,6 @@ $greyLight: #1d2227;
 $white: #ffffff;
 $whiteDark: rgba(255, 255, 255, 0.8);
 
-$bp-1200: 75em; //1200px
-$bp-1000: 62.5em; //1000px
-$bp-900: 56.25em; //900px
-$bp-700: 43.75em; //700px
-$bp-600: 37.5em; //600px
-$bp-480: 30em; //480px
-$bp-400: 25em; //400px
-$bp-300: 18.75em; //300px
-
-// @media only screen and (max-width: $bp-1200) {
-
 @mixin center {
     position: absolute;
     top: 50%;
@@ -58,23 +47,13 @@ input {
     border-style: none;
     border-radius: 10px;
 
-    width: 55rem;
+    width: 90vw;
+    max-width: 55rem;
     padding: 2rem;
+    font-weight: 400;
 
     font-family: $primaryFont;
     font-size: 1.6rem;
-
-    @media only screen and (max-width: $bp-600) {
-        width: 45rem;
-    }
-
-    @media only screen and (max-width: $bp-480) {
-        width: 40rem;
-    }
-
-    @media only screen and (max-width: $bp-400) {
-        width: 30rem;
-    }
 }
 
 .container {
@@ -84,14 +63,16 @@ input {
     flex-direction: column;
     align-items: center;
 
+
     &__title {
         color: $primaryColor;
         font-family: $primaryFont;
         font-size: 4rem;
         letter-spacing: 3px;
         text-align: center;
+        font-weight: 800;
 
-        padding: 5rem;
+        padding: 5rem 0;
 
         @media only screen and (max-width: $bp-400) {
             padding: 5rem 0;
@@ -100,6 +81,10 @@ input {
 
     &__todoInput {
         position: relative;
+        display: flex;
+
+        align-items: center;
+        flex-direction: column;
     }
 }
 
@@ -114,23 +99,14 @@ input {
     padding: 1rem;
     border-radius: 5px;
 
-    top: 1rem;
+    top: 6rem;
 
     display: none;
     opacity: 1;
 
     position: absolute;
 
-    left: 6.9rem;
-    top: 6rem;
-
-    @media only screen and (max-width: $bp-600) {
-        left: 1.9rem;
-    }
-
-    @media only screen and (max-width: $bp-480) {
-        left: 0;
-    }
+    z-index: 1000;
 
     &::after {
         content: '';
@@ -143,16 +119,14 @@ input {
         border-bottom: 4rem solid $primaryColor;
 
         top: -4rem;
-        left: 17.6rem;
-    
-        @media only screen and (max-width: $bp-480) {
-            left: 17.6rem;
-        }
-
-        @media only screen and (max-width: $bp-400) {
-            left: 12.6rem;
-        }
+        left: 50%;
+        transform: translate(-50%);
     }
+}
+
+#todoList {
+    max-width: 55rem;
+    width: 90vw;
 }
 
 .todoItem {
@@ -165,7 +139,6 @@ input {
 
     margin-top: 1rem;
     padding: 1rem 2rem;
-    width: 55rem;
 
     border-radius: 10px;
 
@@ -173,33 +146,12 @@ input {
     justify-content: space-between;
     align-items: center;
 
-    @media only screen and (max-width: $bp-600) {
-        width: 45rem;
-    }
-
-    @media only screen and (max-width: $bp-480) {
-        width: 40rem;
-    }
-
-    @media only screen and (max-width: $bp-400) {
-        width: 30rem;
-    }
-
     p {
         word-wrap: break-word;
-        width: 40rem;
+        font-weight: 400;
 
-        @media only screen and (max-width: $bp-600) {
-            width: 30rem;
-        }
-    
-        @media only screen and (max-width: $bp-480) {
-            width: 25rem;
-        }
-    
-        @media only screen and (max-width: $bp-400) {
-            width: 15rem;
-        }
+        width: 100%;
+        max-width: 45vw;
     }
 
     &_check {
